@@ -1,12 +1,11 @@
-# Auth0-Passwordless-Login-with-Twilio-Verify
-Auth0 supports [passwordless loign via either SMS or Email](https://auth0.com/docs/connections/passwordless). By default, Auth0 uses [Twilio programmable messaging API](https://www.twilio.com/docs/sms/api) to send OTP via SMS. However, Auth0 also allows you to [setup custom SMS gateway for passwordless login](https://auth0.com/docs/connections/passwordless/use-sms-gateway-passwordless). This project will show you how to setup Auth0 to use [Twilio Verify](https://www.twilio.com/docs/verify/api)for passwordless login.
+# Auth0 Passwordless Login with Twilio Verify
+Auth0 supports [passwordless loign via either SMS or Email](https://auth0.com/docs/connections/passwordless). By default, Auth0 uses [Twilio programmable messaging API](https://www.twilio.com/docs/sms/api) to send OTP via SMS. However, Auth0 also allows you to [setup custom SMS gateway for passwordless login](https://auth0.com/docs/connections/passwordless/use-sms-gateway-passwordless). This project will show you how to setup Auth0 to use [Twilio Verify](https://www.twilio.com/docs/verify/api) for passwordless login.
 ## Why custom SMS gateway with Twilio Verify?
 Twilio Verify is a dedicated, fully managed, turn-key omnichannle verification solution. 
 
 * you want the benefit of Twilio Verify's global reach, enhanced SMS OTP deliverity, build-in reducency, multilple languages support etc.
 * you want to take advantage of Twilio Verify build-in service rate limit, fraud prevention
 * you want to leverage some advanced fraud prevention feature in Verify such as [programmable rate limits](https://www.twilio.com/docs/verify/api/programmable-rate-limits)
-)
 * you need the flexiblity to carry out additional checking before sending the SMS OTP. E.g for fraud prevention purpose, you want to block a phone number or a carrier or a country
 * you want to take advantage of Twilio Verify multiple channels, instead of sending OTP via SMS, you want to use other channels such as voice call, email and or WhatsApp to delivery the OTP
 
