@@ -36,7 +36,7 @@ Please [contact Twilio Sales](https://www.twilio.com/help/sales) to enable custo
 2. Add a [new function](https://www.twilio.com/docs/runtime/functions/functions-editor) and give it a name, for example, PasswordlessLogin. 
 3. Change the function's visibility from [protected to public](https://www.twilio.com/docs/runtime/functions-assets-api/api/understanding-visibility-public-private-and-protected-functions-and-assets)
 4. Copy the code from [this repo](https://github.com/mingchaoma/Auth0-Passwordless-Login-with-Twilio-Verify/blob/main/functions/Auth0_Verify_Passwordless.js) to your function PasswordlessLogin and save it
-5. Add a [new asset](https://www.twilio.com/docs/runtime/functions/functions-editor#add-asset) and name it as block_mcc_mnc.json and copy the content from [this file](https://github.com/mingchaoma/Auth0-Passwordless-Login-with-Twilio-Verify/blob/main/assets/block_mcc_mnc.json), change the visibility from [protected to private](https://www.twilio.com/docs/runtime/functions-assets-api/api/understanding-visibility-public-private-and-protected-functions-and-assets) and save it.
+5. Add a [new asset](https://www.twilio.com/docs/runtime/functions/functions-editor#add-asset) and name it as block_mcc_mnc.json and copy the content from [this file](https://github.com/mingchaoma/Auth0-Passwordless-Login-with-Twilio-Verify/blob/main/assets/block_mcc_mnc.json), change the visibility from [protected to private](https://www.twilio.com/docs/runtime/functions-assets-api/api/understanding-visibility-public-private-and-protected-functions-and-assets) and save it. Check [here](https://www.mcc-mnc.com/) for more on MCC and MNC.
 6. Setup following [Environment variables](https://www.twilio.com/docs/runtime/functions/variables)
 
 Variable | Value 
