@@ -4,7 +4,8 @@ Auth0 supports [passwordless loign via either SMS or Email](https://auth0.com/do
 Twilio Verify is a dedicated, fully managed, turn-key omnichannle verification solution. 
 
 * you want the benefit of Twilio Verify's global reach, enhanced SMS OTP deliverity, build-in reducency, multilple languages support etc.
-* you want to take advantage of Twilio Verify build-in service rate limit, fraud prevention
+* you want to be protected from [sms pumping fraud](https://www.twilio.com/docs/verify/preventing-toll-fraud) with [Twilio Verify Fraud Guard](https://www.twilio.com/docs/verify/preventing-toll-fraud/sms-fraud-guard)
+* you want to take advantage of Twilio Verify build-in service rate limit
 * you want to leverage some advanced fraud prevention feature in Verify such as [programmable rate limits](https://www.twilio.com/docs/verify/api/programmable-rate-limits)
 * you need the flexiblity to carry out additional checking before sending the SMS OTP. E.g for fraud prevention purpose, you want to block a phone number or a carrier or a country
 * you want to take advantage of Twilio Verify multiple channels, instead of sending OTP via SMS, you want to use other channels such as voice call, email and or WhatsApp to delivery the OTP
@@ -47,4 +48,11 @@ Variable | Value
 7. Update [dependencies](https://www.twilio.com/docs/runtime/functions/dependencies): update Twilio to the latest version (3.67.2, at the time of writing)
 8. Save and Deploy
 9. Take a note of your Twilio Function URL, in this example, it will be something like https://auth0-xxxx.twil.io/PasswordlessLogin. This is the URL that you will use when setting up the custom SMS gateway
+
+## Call Verify Feedback API and enable Twilio Verify Fraud Guard
+In order to benefit from Twilio Verify Fraud Guard, you must call Twilio [Verify Feedback API](https://www.twilio.com/docs/verify/api/customization-options#custom-verification-codes) to update OTP status
+### Create Custom Log Streamms Using Webhook
+Please follow this instruction to [create custom log streams using webhook](https://auth0.com/docs/customize/log-streams/custom-log-streams) and call Verify Feedback API whenever the OTP is successfully validated. For example, if you use Auth0 passwordless login and then issue an access token, you can capture the event ["Success Exchange Token Exchange"](https://auth0.com/docs/deploy-monitor/logs/log-event-filters) which indicates a successful login with the OTP and then call Twilio Verify feedback API (you only need to call Verify feedback API for successful login event). If you are not sure, you can always check [what log events](https://auth0.com/docs/deploy-monitor/logs/view-log-events) are triggered for a successful login with the OTP and then use them as the triggers to call Verify feedback API.
+### Enable Twilio Verify Fraud Guard
+Please follow this instruction to enable [Verify Fraud Gurad](https://www.twilio.com/docs/verify/preventing-toll-fraud/sms-fraud-guard). It is extremely important that you use Verify feedback API and enable Fraud Gurad feature when using Auth0 passwordless login. We had seen many SMS pumping victims, so you have been warned. 
 
