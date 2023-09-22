@@ -1,3 +1,5 @@
+Note, if you use Auth0 MFA, please take a look at [this blog post](https://www.twilio.com/blog/configure-auth0-mfa-twilio-verify) on how to use Twilio Verify with Auth0 MFA
+
 # Auth0 Passwordless Login with Twilio Verify
 Auth0 supports [passwordless loign via either SMS or Email](https://auth0.com/docs/connections/passwordless). By default, Auth0 uses [Twilio programmable messaging API](https://www.twilio.com/docs/sms/api) to send OTP via SMS. However, Auth0 also allows you to [setup custom SMS gateway for passwordless login](https://auth0.com/docs/connections/passwordless/use-sms-gateway-passwordless). This project will show you how to setup Auth0 to use [Twilio Verify](https://www.twilio.com/docs/verify/api) for passwordless login.
 ## Why custom SMS gateway with Twilio Verify?
